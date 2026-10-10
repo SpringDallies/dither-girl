@@ -1,0 +1,1 @@
+const e="Retro",o="Handheld",t=4,c=[{r:15,g:56,b:15,percentage:40},{r:48,g:98,b:48,percentage:25},{r:139,g:172,b:15,percentage:20},{r:155,g:188,b:15,percentage:15}],n={category:e,name:o,color_count:4,colors:c};export{e as category,t as color_count,c as colors,n as default,o as name};

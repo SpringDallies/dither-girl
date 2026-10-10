@@ -1,0 +1,1 @@
+const e="Nature",o="Dandelion",c=4,n=[{r:6,g:8,b:2,percentage:63.90831390831391},{r:44,g:150,b:228,percentage:4.0145040145040145},{r:229,g:136,b:4,percentage:3.833203833203833},{r:202,g:235,b:213,percentage:3.4706034706034705}],t={category:e,name:o,color_count:4,colors:n};export{e as category,c as color_count,n as colors,t as default,o as name};

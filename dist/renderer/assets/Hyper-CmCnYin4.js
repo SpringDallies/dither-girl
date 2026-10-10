@@ -1,0 +1,1 @@
+const e="Retro",o="Hyper",c=4,r=[{r:32,g:31,b:44,percentage:22.607142857142858},{r:151,g:111,b:153,percentage:6.2063492063492065},{r:124,g:176,b:157,percentage:2.9484126984126986},{r:246,g:232,b:12,percentage:10.384920634920634}],t={category:e,name:o,color_count:4,colors:r};export{e as category,c as color_count,r as colors,t as default,o as name};

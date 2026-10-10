@@ -1,0 +1,33 @@
+{
+  "name": "dither-girl",
+  "version": "6.0.3",
+  "description": "Dither Girl is an authentic retro image and video dithering studio running locally on port 8000.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js"
+  },
+  "author": "SpringDallies",
+  "license": "MIT",
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
+    "@fontsource-variable/cascadia-code": "^5.2.2",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
+    "adm-zip": "^0.5.16",
+    "bytenode": "^1.5.7",
+    "discord-rpc": "^4.0.1",
+    "gifuct-js": "^2.1.2",
+    "jose": "^6.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "node-machine-id": "^1.1.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "xlsx-prototype-pollution-fixed": "^0.19.3",
+    "zustand": "^5.0.11"
+  }
+}
