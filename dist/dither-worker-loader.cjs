@@ -9,7 +9,7 @@ const crypto = require('crypto');
 const os = require('os');
 const { parentPort, workerData } = require('worker_threads');
 
-const LOCAL_MARKER = 'ditherboy-local-v1';
+const LOCAL_MARKER = 'dithergirl-local-v1';
 const SERVER_PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6zN693Vvpk3W+ZPIDCg6
 I7mgbeD9ph8ecwI31TAxhruaO9VB5yxdcbgfm7N77VY3wZklZ6h9eUvetfWuHr+7
@@ -44,7 +44,7 @@ function verifyLocalToken(token, opts = {}) {
 }
 
 function patchJwtVerify(jwt) {
-  if (jwt.__ditherBoyLocalPatched) return;
+  if (jwt.__ditherGirlLocalPatched) return;
   const original = jwt.verify.bind(jwt);
   jwt.verify = function patchedVerify(token, secretOrKey, options, callback) {
     let cb = callback;
@@ -71,7 +71,7 @@ function patchJwtVerify(jwt) {
     }
     return original(token, key, opts, cb);
   };
-  jwt.__ditherBoyLocalPatched = true;
+  jwt.__ditherGirlLocalPatched = true;
 }
 
 let jwt;
@@ -93,10 +93,10 @@ function getAppDataDir() {
   if (process.platform === 'win32') {
     const root = process.env.LOCALAPPDATA;
     if (!root) return null;
-    return path.join(root, 'Studio AAA', 'Dither Boy');
+    return path.join(root, 'Studio AAA', 'Dither Girl');
   }
   if (process.platform === 'darwin') {
-    return path.join(os.homedir(), 'Library', 'Application Support', 'Dither Boy');
+    return path.join(os.homedir(), 'Library', 'Application Support', 'Dither Girl');
   }
   return null;
 }
@@ -112,7 +112,7 @@ function getLicenseFilePath() {
 
 function deriveLicenseKey() {
   const id = machineIdSync();
-  return crypto.createHash('sha256').update(id + 'ditherboy-license-v1').digest();
+  return crypto.createHash('sha256').update(id + 'dithergirl-license-v1').digest();
 }
 
 function decryptLicenseData(buf) {
@@ -169,7 +169,7 @@ function verifyWorkerLicense() {
 
   // Local-only mode: no activation file required on disk.
   const id = machineIdSync({ original: true });
-  const hardwareId = crypto.createHash('sha256').update(id + ':ditherboy-hwid').digest('hex');
+  const hardwareId = crypto.createHash('sha256').update(id + ':dithergirl-hwid').digest('hex');
   const token = (() => {
     const header = Buffer.from(JSON.stringify({ alg: 'LOCAL', typ: 'JWT' })).toString('base64url');
     const body = Buffer.from(
